@@ -56,7 +56,9 @@
              (clj->php "café") => "s:5:\"café\";")
        (fact "it converts maps"
              (clj->php {0 1, 1 2, 2 3}) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
-             (clj->php {"name" "Bob", "numbers" {0 1, 1 2}}) => "a:2:{s:7:\"numbers\";a:2:{i:0;i:1;i:1;i:2;}s:4:\"name\";s:3:\"Bob\";}")
+             (clj->php {"name" "Bob", "numbers" {0 1}}) =>
+             #(or (= % "a:2:{s:4:\"name\";s:3:\"Bob\";s:7:\"numbers\";a:1:{i:0;i:1;}}")
+                  (= % "a:2:{s:7:\"numbers\";a:1:{i:0;i:1;}s:4:\"name\";s:3:\"Bob\";}")))
        (fact "it converts ordered maps"
              (clj->php (ordered-map 0 1, 1 2, 2 3)) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
              (clj->php (ordered-map "name" "Bob", "numbers" (ordered-map 0 1, 1 2))) => "a:2:{s:4:\"name\";s:3:\"Bob\";s:7:\"numbers\";a:2:{i:0;i:1;i:1;i:2;}}")
@@ -64,4 +66,5 @@
              (clj->php [1 2 3]) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
              (clj->php [true false nil]) => "a:3:{i:0;b:1;i:1;b:0;i:2;N;}"
              (clj->php '(4 5 6)) => "a:3:{i:0;i:4;i:1;i:5;i:2;i:6;}"
-             (clj->php #{9 10 11}) => "a:3:{i:0;i:9;i:1;i:10;i:2;i:11;}"))
+             (clj->php #{9 10}) => #(or (= % "a:2:{i:0;i:9;i:1;i:10;}")
+                                        (= % "a:2:{i:0;i:10;i:1;i:9;}"))))
