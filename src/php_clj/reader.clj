@@ -27,7 +27,7 @@
     (.read stream selected-bytes)
     (String. selected-bytes)))
 
-(defn read-until
+(defn ^String read-until
   "Reads from the given stream until a specified character is found and returns
   the string up to that point (not including the delimiter). Note that this
   mutates the given stream."
