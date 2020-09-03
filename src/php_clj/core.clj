@@ -7,6 +7,8 @@
             [clojure.string :as s]
             [flatland.ordered.map :refer [ordered-map]]))
 
+(set! *warn-on-reflection* true)
+
 (declare reader->clj)
 (declare clj->php)
 

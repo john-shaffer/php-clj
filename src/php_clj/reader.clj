@@ -6,6 +6,8 @@
   (:require [clojure.string :as s])
   (:import [java.io ByteArrayInputStream BufferedInputStream]))
 
+(set! *warn-on-reflection* true)
+
 (defn buffered-input-stream
   "Returns a BufferedInputStream for a string."
   [^String s]
