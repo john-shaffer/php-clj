@@ -130,6 +130,7 @@
     (true? clj)     "b:1;"
     (false? clj)    "b:0;"
     (nil? clj)      "N;"
+    :else
     (throw
       (IllegalArgumentException.
         (str "Can't encode value of class: " (class clj))))))
