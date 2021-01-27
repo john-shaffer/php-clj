@@ -1,4 +1,4 @@
-(defproject org.clojars.john-shaffer/php-clj "0.5.1"
+(defproject org.clojars.john-shaffer/php-clj "1.0.0-alpha"
   :description "Deserialize PHP into Clojure data structures and back again."
   :url "https://github.com/john-shaffer/php-clj"
   :dependencies [[org.clojure/clojure "1.10.1"]
