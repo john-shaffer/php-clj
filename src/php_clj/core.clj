@@ -89,6 +89,11 @@
   (let [bytes (-> clj .getBytes count)]
     (str "s:" bytes ":\"" clj "\";")))
 
+(defn- encode-ident [clj]
+  (if (simple-ident? clj)
+    (name clj)
+    (str (namespace clj) "/" (name clj))))
+
 (defn- encode-float [clj]
   (str "d:" clj ";"))
 
@@ -119,6 +124,7 @@
     (map? clj)      (encode-map clj)
     (coll? clj)     (encode-collection clj)
     (string? clj)   (encode-string clj)
+    (ident? clj)    (encode-ident clj)
     (float? clj)    (encode-float clj)
     (integer? clj)  (encode-int clj)
     (true? clj)     "b:1;"
