@@ -60,8 +60,8 @@
              #(or (= % "a:2:{s:4:\"name\";s:3:\"Bob\";s:7:\"numbers\";a:1:{i:0;i:1;}}")
                   (= % "a:2:{s:7:\"numbers\";a:1:{i:0;i:1;}s:4:\"name\";s:3:\"Bob\";}")))
        (fact "it convert maps with symbol and keyword keys"
-             (clj->php {'a 1 'b 2}) => "a:2:{ai:1;bi:2;}"
-             (clj->php {:a 1 :b 2}) => "a:2:{ai:1;bi:2;}")
+             (clj->php {'a 1 'b 2}) => "a:2:{s:1:\"a\";i:1;s:1:\"b\";i:2;}"
+             (clj->php {:a 1 :b 2}) => "a:2:{s:1:\"a\";i:1;s:1:\"b\";i:2;}")
        (fact "it converts ordered maps"
              (clj->php (ordered-map 0 1, 1 2, 2 3)) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
              (clj->php (ordered-map "name" "Bob", "numbers" (ordered-map 0 1, 1 2))) => "a:2:{s:4:\"name\";s:3:\"Bob\";s:7:\"numbers\";a:2:{i:0;i:1;i:1;i:2;}}")

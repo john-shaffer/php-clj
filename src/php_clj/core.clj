@@ -90,9 +90,10 @@
     (str "s:" bytes ":\"" clj "\";")))
 
 (defn- encode-ident [clj]
-  (if (simple-ident? clj)
-    (name clj)
-    (str (namespace clj) "/" (name clj))))
+  (encode-string
+    (if (simple-ident? clj)
+      (name clj)
+      (str (namespace clj) "/" (name clj)))))
 
 (defn- encode-float [clj]
   (str "d:" clj ";"))
