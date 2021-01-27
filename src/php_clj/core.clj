@@ -129,4 +129,7 @@
     (integer? clj)  (encode-int clj)
     (true? clj)     "b:1;"
     (false? clj)    "b:0;"
-    (nil? clj)      "N;"))
+    (nil? clj)      "N;"
+    (throw
+      (IllegalArgumentException.
+        (str "Can't encode value of class: " (class clj))))))
