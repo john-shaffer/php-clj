@@ -1,3 +1,5 @@
+.cpcache/
 .lein-repl-history
+.nrepl-port
 pom.xml
 target
