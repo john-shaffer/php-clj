@@ -1,4 +1,6 @@
-# php-clj [![Build Status](https://travis-ci.org/mudge/php-clj.png?branch=master)](https://travis-ci.org/mudge/php-clj)
+# php-clj
+
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.john-shaffer/php-clj.svg)](https://clojars.org/org.clojars.john-shaffer/php-clj)
 
 ***This is a fork of php-clj that has been updated for compatibility with newer versions of the [ordered](https://github.com/clj-commons/ordered) dependency. The tests have been updated to pass in Clojure 1.10.1. If you are getting an error like `clojure.lang.ExceptionInfo: Conflicting data-reader mapping {:url #object[java.net.URL 0x42039326 "jar:file:/home/john/.m2/repository/org/flatland/ordered/1.5.7/ordered-1.5.7.jar!/data_readers.clj"], :conflict ordered/set, :mappings {ordered/set #'ordered.set/into-ordered-set, ordered/map #'ordered.map/ordered-map}}` with the mainline php-clj, then this fork is what you need.***
 
