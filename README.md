@@ -10,7 +10,7 @@ data structures and vice versa.
 
 **Current version**: 1.1.0
 
-**Supported Clojure versions:** 1.10.1
+**Supported Clojure versions:** 1.10 or later
 
 ## Usage
 
