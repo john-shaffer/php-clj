@@ -1,6 +1,6 @@
 {:deps
  {org.clojure/clojure {:mvn/version "1.10.3"}
-  org.flatland/ordered {:mvn/version "1.15.11"}}
+  org.flatland/ordered {:mvn/version "1.15.12"}}
  :aliases
  {:antq
   {:deps
