@@ -4,7 +4,7 @@
             [org.corfield.build :as bb]))
 
 (def lib 'org.clojars.john-shaffer/php-clj)
-(def version "1.3.0")
+(def version "1.3.1")
 
 (defn get-version [opts]
   (str version (when (:snapshot opts) "-SNAPSHOT")))
