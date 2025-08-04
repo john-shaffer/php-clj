@@ -11,6 +11,7 @@
       with import nixpkgs { inherit system; }; {
         devShells.default = mkShell {
           buildInputs = [
+            clojure
             jdk
             leiningen
           ];
